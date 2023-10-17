@@ -70,6 +70,7 @@ use std::num::ParseIntError;
 // 就像 `Option` 那样，我们可以使用 `map()` 之类的组合算子。
 // 除去写法外，这个函数与上面那个完全一致，它的作用是：
 // 如果值是合法的，计算其乘积，否则返回错误。
+// 备注：and_then 的使用场景
 fn multiply(first_number_str: &str, second_number_str: &str) -> Result<i32, ParseIntError> {
     first_number_str.parse::<i32>().and_then(|first_number| {
         second_number_str.parse::<i32>().map(|second_number| first_number * second_number)
